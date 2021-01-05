@@ -1,0 +1,64 @@
+.section_1 {
+    padding: 0px;
+    position: relative;
+    height: 600px;
+    background-image: url(IMAGES/poterie_accueil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bloc_text {
+    position: absolute;
+    top: 50%;
+    left: 12.2%;
+    width: 440px;
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Effet Typing texte */
+
+.typewriter h2 {
+    font-size: 4rem;
+    color: white;
+    overflow: hidden; 
+    border-right: .15em solid orange; 
+    white-space: nowrap; 
+    width: 95%;
+    animation: 
+      typing 4.5s steps(40, end),
+      blink-caret 0.9s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 90% }
+}
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+/* source : https://css-tricks.com/snippets/css/typewriter-effect/ */
+
+.bloc_text p {
+    color: white;
+}
+
+.btn_boutique {
+    border: none;
+    background-color: orange;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 50%;
+}
+
+.btn_boutique a {
+    color: white;
+}

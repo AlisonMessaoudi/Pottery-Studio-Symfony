@@ -1,0 +1,177 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Exercice Liste {% endblock %}
+
+{% block body %}
+
+<div class="mb-4">
+
+    <a href="{{ path('twig')}}">Retour</a>
+    <!-- Bouton retour renvoi à la page twig - PrixExtension.php.twig -->
+    <!-- path : permet de créer des liens vers des assets (autres pages, images, vidéos, ...) -->
+
+</div>
+
+<div class="border p-3">
+<!-- p-3 : réglage du padding (bootstrap) -->
+<!-- border : permet de mettre des bordures (bootstrap) -->
+    <h4 class="text-center"> Exercice 1 : Liste complète </h4>
+
+    <br/>
+
+    {% for personne in personnes %}
+    <!-- pour chaque personne dans $personnes -->
+
+        <!-- j'affiche --> 
+        <p>
+            <b>{{ personne.nom }} {{ personne.prenom}} </b>
+                <!-- la balise b : mettre en gras -->
+            ({{ personne.statut }}),
+            <i>date de naissance : {{ personne.naissance|date('d/m/Y')}}</i>
+                <!-- |date('d/m/Y') : permet de formater le format de date -->
+                <!-- la balise i : mettre en italic -->
+        </p>
+
+    {% endfor %} 
+    <!-- ne pas oublier de fermer la boucle for -->
+
+</div>
+
+<div class="border p-3 mt-4">
+<!-- mt-4 : réglage du margin-top (bootstrap) -->
+
+    <h4 class="text-center"> Exercice 2 : Membres de la famille Dupont </h4>
+
+    <br/>
+
+    {% for personne in personnes %}
+    <!-- pour chaque personne dans $personnes -->    
+        {% if personne.nom == 'Dupont' %}
+        <!-- si le prenom == 'Dupont' -->
+
+        <!-- alors j'affiche : -->
+        <p>
+            <b>{{ personne.nom }} {{ personne.prenom }}</b>
+            ({{ personne.statut }}),
+            <i>date de naissance : {{ personne.naissance|date('d/m/Y') }}</i>
+        </p>
+
+        {% endif %}
+        <!-- ne pas oublier de fermer la condition if -->
+    
+    {% endfor %}
+    <!-- ne pas oublier de fermer la boucle for -->
+
+</div>
+
+<div class="border p-3 mt-4">
+
+    <h4 class="text-center"> Exercice 3 : uniquement les 3 premiers </h4>
+
+    <br/>
+
+    {% for personne in personnes %}
+
+        {% if loop.index <=3 %}
+        <!-- si l'itération actuelle de la boucle est inférieure ou égale à 3 -->
+
+        <!-- alors j'affiche --> 
+        <p>
+            <b>{{ personne.nom|upper}} {{ personne.prenom }}</b>
+            <!-- |upper : permet d'afficher l'élément en majuscule -->
+            ({{ personne.statut }}),
+            <i>date de naissance : {{ personne.naissance|date('d/m/Y') }}</i>
+        </p>
+
+        {% endif %}
+    
+    {% endfor %}
+
+</div>
+
+<div class="border p-3 mt-4">
+
+    <h4 class="text-center"> Exercice 4 : Membres nés après 1950 </h4>
+
+    <br/>
+
+    {% for personne in personnes %}
+
+        {% if personne.naissance|date('Y') > 1950 %}
+
+        <p>
+            <b>{{ personne.nom }} {{ personne.prenom }}</b>
+            ({{ personne.statut }})
+            <i> {{ personne.naissance|date('d/m/Y') }}</i>
+        </p>
+
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+
+<div class="border p-3 mt-4">
+
+    <h4 class="text-center"> Exercice 5 : Du plus vieux au plus jeunes </h4>
+
+    <br/>
+
+    {% for personne in personnes|sort((a,b) => a.naissance <=> b.naissance) %}
+
+        <p>
+            <b> {{ personne.nom }} {{ personne.prenom }} </b>
+            ({{ personne.statut}}),
+            <i>date de naissance : {{ personne.naissance|date('d/m/Y') }}</i>
+        </p>
+
+    {% endfor %}
+
+</div>
+
+<div class="border p-3 mt-4">
+    
+    <h4 class="text-center"> Exercice 6 : Première ligne bleu | Dernière ligne rouge</h4>
+
+    <br/>
+
+    {% for personne in personnes %}
+
+        <p class="{{ loop.first ? 'text-primary' }}{{ loop.last ? 'text-danger' }}">
+            <b> {{ personne.nom}} {{ personne.prenom}} </b>
+            ({{ personne.statut }}),
+            <i>date de naissance : {{ personne.naissance|date('d/m/Y') }}</i>
+        </p>
+        
+    {% endfor %}
+
+</div>
+
+<div class="border p-3 mt-4">
+
+    <h4 class="text-center"> Exercice 8 : Sauter une ligne toutes les deux lignes </h4>
+
+    <br/>
+
+    {% for personne in personnes %}
+
+        <p>
+            <b> {{ personne.nom }} {{ personne.prenom }} </b>
+            ({{ personne.statut}}),
+            <i>date de naissance : {{ personne.naissance|date('d/m/Y') }}</i>
+        </p>
+
+        {% if loop.index is even %}
+        <!-- si l'itération actuelle est even : pair -->
+            
+            <!-- alors je crée un espace --> 
+            <br/>
+        
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+
+<!-- fin du block body --> 
+{% endblock %}
