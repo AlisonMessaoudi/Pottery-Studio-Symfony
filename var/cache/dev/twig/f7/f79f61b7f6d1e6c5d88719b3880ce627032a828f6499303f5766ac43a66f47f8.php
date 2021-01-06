@@ -91,22 +91,25 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
 
             ";
         // line 55
-        $this->displayBlock('body', $context, $blocks);
+        $this->loadTemplate("base/partials/_flash.html.twig", "base.html.twig", 55)->display($context);
         // line 56
-        echo "        
+        echo "            ";
+        $this->displayBlock('body', $context, $blocks);
+        // line 57
+        echo "            
         </main>
 
         <!-- LIEN AVEC LE FOOTER -->
         ";
-        // line 60
-        $this->loadTemplate("base/footer.html.twig", "base.html.twig", 60)->display($context);
         // line 61
+        $this->loadTemplate("base/footer.html.twig", "base.html.twig", 61)->display($context);
+        // line 62
         echo "
         <!-- LIEN FICHIER JAVASCRIPT -->
         ";
-        // line 63
+        // line 64
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 75
+        // line 76
         echo "
     </body>
 
@@ -194,7 +197,7 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
 
     }
 
-    // line 55
+    // line 56
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -212,7 +215,7 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
 
     }
 
-    // line 63
+    // line 64
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -222,7 +225,7 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 64
+        // line 65
         echo "
             <!-- BOOTSTRAP JQUERY -->
             <script src=\"https://code.jquery.com/jquery-3.5.1.slim.min.js\" integrity=\"sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj\" crossorigin=\"anonymous\"></script>
@@ -232,7 +235,7 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
             
             <!-- MON JAVASCRIPT -->
             <!-- > <script src=\"";
-        // line 72
+        // line 73
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/script.js"), "html", null, true);
         echo "\"></script> -->
         
@@ -257,7 +260,7 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
 
     public function getDebugInfo()
     {
-        return array (  236 => 72,  226 => 64,  216 => 63,  198 => 55,  182 => 32,  177 => 30,  172 => 28,  167 => 26,  162 => 24,  153 => 17,  143 => 16,  124 => 13,  110 => 75,  108 => 63,  104 => 61,  102 => 60,  96 => 56,  94 => 55,  88 => 51,  86 => 50,  85 => 49,  72 => 38,  70 => 16,  64 => 13,  54 => 5,  52 => 4,  47 => 1,);
+        return array (  239 => 73,  229 => 65,  219 => 64,  201 => 56,  185 => 32,  180 => 30,  175 => 28,  170 => 26,  165 => 24,  156 => 17,  146 => 16,  127 => 13,  113 => 76,  111 => 64,  107 => 62,  105 => 61,  99 => 57,  96 => 56,  94 => 55,  88 => 51,  86 => 50,  85 => 49,  72 => 38,  70 => 16,  64 => 13,  54 => 5,  52 => 4,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -316,8 +319,9 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
             
             </div>
 
+            {% include 'base/partials/_flash.html.twig' %}
             {% block body %}{% endblock %}
-        
+            
         </main>
 
         <!-- LIEN AVEC LE FOOTER -->
@@ -340,6 +344,6 @@ class __TwigTemplate_b53b736bad85ef1752f016a94dce8735db95d534f061dc7452aa15c6e8c
     </body>
 
 </html>
-", "base.html.twig", "/Users/Alison/Documents/Sites/monblog/templates/base.html.twig");
+", "base.html.twig", "/Users/Alison/Documents/Sites/Pottery-Studio-Symfony/templates/base.html.twig");
     }
 }

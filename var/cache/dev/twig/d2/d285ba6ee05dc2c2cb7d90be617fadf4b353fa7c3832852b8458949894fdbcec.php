@@ -644,6 +644,6 @@ class __TwigTemplate_186ab994a8780c405dd8d89462cc91e875469e813a45e22ed3dabfa28c2
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/notifier.html.twig", "/Users/Alison/Documents/Sites/monblog/vendor/symfony/web-profiler-bundle/Resources/views/Collector/notifier.html.twig");
+", "@WebProfiler/Collector/notifier.html.twig", "/Users/Alison/Documents/Sites/Pottery-Studio-Symfony/vendor/symfony/web-profiler-bundle/Resources/views/Collector/notifier.html.twig");
     }
 }

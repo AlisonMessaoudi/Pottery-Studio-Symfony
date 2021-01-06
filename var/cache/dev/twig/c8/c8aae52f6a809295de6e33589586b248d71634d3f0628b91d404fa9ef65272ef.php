@@ -193,6 +193,6 @@ class __TwigTemplate_953e9836c7ce9dfe484b36bd71c2fe9a32917b7326a68c0a70a94a9244c
         {% block body '' %}
     </body>
 </html>
-", "@WebProfiler/Profiler/base.html.twig", "/Users/Alison/Documents/Sites/monblog/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
+", "@WebProfiler/Profiler/base.html.twig", "/Users/Alison/Documents/Sites/Pottery-Studio-Symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
     }
 }

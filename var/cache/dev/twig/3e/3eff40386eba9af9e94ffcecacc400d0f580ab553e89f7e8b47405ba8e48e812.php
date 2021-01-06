@@ -104,6 +104,15 @@ class __TwigTemplate_42daada2168d40413a7166b73dcd40d4de1a0cd2981aabb4c6287ecf929
 
     </section>
 
+    <section class=\"container-fluid section_2\">
+    
+        <div>
+        
+        
+        </div>
+    
+    </section>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -154,6 +163,15 @@ class __TwigTemplate_42daada2168d40413a7166b73dcd40d4de1a0cd2981aabb4c6287ecf929
 
     </section>
 
-{% endblock %}", "base/accueil.html.twig", "/Users/Alison/Documents/Sites/monblog/templates/base/accueil.html.twig");
+    <section class=\"container-fluid section_2\">
+    
+        <div>
+        
+        
+        </div>
+    
+    </section>
+
+{% endblock %}", "base/accueil.html.twig", "/Users/Alison/Documents/Sites/Pottery-Studio-Symfony/templates/base/accueil.html.twig");
     }
 }

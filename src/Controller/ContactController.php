@@ -2,61 +2,60 @@
 
 namespace App\Controller;
 
-use App\Service\EmailService;
+/**/ use App\Service\EmailService; 
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**/ use Symfony\Component\HttpFoundation\Request; 
+
+
 class ContactController extends AbstractController
 {
+
     /**
      * @Route("/contact", name="contact")
      */
-    public function index(EmailService $emailService): Response
+    
+    public function index(EmailService $emailService, Request $request): Response
+    
     {
-        $email = "pierre@gmail.com";
-        $message = "Bonjour, super !";
 
-        $data = [
-            'replyTo' => $email,
-            // 'email' => $email,
-            'message' => $message,
-            'subject' => "[Alison - CONTACT]",
-            'template' => 'email/contact.email.twig',
-        ];
+        if ($request->isMethod('POST')) 
+        /* Si la requête utilise la méthode Post */
+        {
+            /* Je crée un $email contenant l'email renseigné */
+            $email = $request->request->get('email');
+            
+            /* Je crée un $message contenant le message renseigné */
+            $message = $request->request->get('message');
+        
 
-        $emailService->send($data);
+            $emailService->send([
+                'replyTo' => $email,
+                'subject' => "email.contact.subject",
+                /* revoir explication ! */
+                'template' => 'email/contact.email.twig',
+                /* modèle du mail */
+                'context' => [
+                /* context : */
+                    'email' => $email,
+                    'message' => $message
+                ]
+            ]);
 
-        return $this->render('contact/index.html.twig', [
+            $this->addFlash('success','Nous avons bien reçu votre message. Merci !');
+            
+            return $this->redirectToRoute('contact');
+        
+        } /* fin du if */
+        
 
-        ]);
-    }
-}
+        return $this->render('contact/contact.html.twig', [
 
-// class ContactController extends AbstractController
-// {
-//     /**
-//      * @Route("/contact", name="contact")
-//      */
-//     public function sendEmail(MailerInterface $mailer)
-//     {
-//         $email = (new Email())
-//             ->from('hello@example.com')
-//             ->to('demo.wf3.victor@gmail.com')
-//             //->cc('cc@example.com')
-//             //->bcc('bcc@example.com')
-//             //->replyTo('fabien@example.com')
-//             //->priority(Email::PRIORITY_HIGH)
-//             ->subject('prosper: Time for Symfony Mailer!')
-//             ->text('Sending emails is fun again!')
-//             ->html('<p>See Twig integration for better HTML integration!</p>');
+        ]); /* fin de return */
+    
+    } /* fin de la function index */
 
-//         $mailer->send($email);
-
-//         return $this->render('contact/index.html.twig', [
-
-//         ]);
-//     }
-// }
+} /* fin de class ContactController */

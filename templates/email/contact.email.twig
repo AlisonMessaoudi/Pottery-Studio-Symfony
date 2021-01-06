@@ -1,20 +1,7 @@
-<header style="font-weight:bold; margin-bottom: 30px;">
-    MON BLOG 
-    <hr>
-</header>
+{% extends "email/base.email.twig" %}
 
-{% block body %}{% endblock %}
-
-<div style="margin-top:20px;">
-
-    Cordilament, </br>
-    Victor.
-
-</div>
-
-<footer style="margin-top: 30px;">
-   
-    <hr>
-    Les pros du dev !
-
-</footer>
+{% block body %}
+    Vous avez reçu un email de <b>{{ mail }}</b> :
+    <br><br>
+    {{ message|nl2br }}
+{% endblock %}

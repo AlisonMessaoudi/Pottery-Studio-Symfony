@@ -168,6 +168,6 @@ class __TwigTemplate_22de4ec36d5611aedf262e03f430101fd84246550e660a1137f16b2fd18
 
     {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: false }) }}
 {% endblock %}
-", "@WebProfiler/Collector/ajax.html.twig", "/Users/Alison/Documents/Sites/monblog/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
+", "@WebProfiler/Collector/ajax.html.twig", "/Users/Alison/Documents/Sites/Pottery-Studio-Symfony/vendor/symfony/web-profiler-bundle/Resources/views/Collector/ajax.html.twig");
     }
 }

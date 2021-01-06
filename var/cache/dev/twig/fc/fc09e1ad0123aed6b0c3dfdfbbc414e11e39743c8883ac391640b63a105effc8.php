@@ -557,6 +557,6 @@ class __TwigTemplate_9b34c1e8089b825e2f9fb5721eebb335108ee35488dfe4fce19a034d0f1
         {% endif %}
     </div>
 {% endblock %}
-", "@WebProfiler/Collector/http_client.html.twig", "/Users/Alison/Documents/Sites/monblog/vendor/symfony/web-profiler-bundle/Resources/views/Collector/http_client.html.twig");
+", "@WebProfiler/Collector/http_client.html.twig", "/Users/Alison/Documents/Sites/Pottery-Studio-Symfony/vendor/symfony/web-profiler-bundle/Resources/views/Collector/http_client.html.twig");
     }
 }

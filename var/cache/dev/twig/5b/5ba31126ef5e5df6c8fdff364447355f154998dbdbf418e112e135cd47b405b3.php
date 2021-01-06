@@ -144,6 +144,6 @@ class __TwigTemplate_304f9a408f68ea4f91865867df56afb28000fbadb33481c04fb9f7ba28a
     </div>
 
 </nav>
-", "base/header.html.twig", "/Users/Alison/Documents/Sites/monblog/templates/base/header.html.twig");
+", "base/header.html.twig", "/Users/Alison/Documents/Sites/Pottery-Studio-Symfony/templates/base/header.html.twig");
     }
 }
